@@ -13,3 +13,13 @@ View(ClimateTest)
 #create a linear model - first model -R!
 climatelm =lm(Temp ~ MEI + CO2 + CH4 + N2O + CFC.11 + CFC.12 +TSI + Aerosols, data=ClimateTrain)
 
+summary(climatelm)
+
+#correlations
+cor(ClimateTrain)
+
+CorrelationAllVariable = cor(ClimateTrain)
+View(CorrelationAllVariable)
+
+LInReg = lm(Temp ~ MEI + N2O + TSI + Aerosols, data=ClimateTrain)
+summary(LInReg)
